@@ -61,7 +61,7 @@ Nalron a consolidé le fichier consolidé ci-dessus avec les données mises à d
 
 Ce dataset est très intéressant. Une version mise à jour existe sur le site d'Enedis avec les typologies déjà présentes en colonnes, donc pas besoin de pivoter la table : [points de charge fichier Enedis](https://data.enedis.fr/explore/dataset/nombre-total-de-points-de-charge/information/?dataChart=eyJxdWVyaWVzIjpbeyJjaGFydHMiOlt7InR5cGUiOiJjb2x1bW4iLCJmdW5jIjoiU1VNIiwieUF4aXMiOiJzb2NpZXRlIiwic2NpZW50aWZpY0Rpc3BsYXkiOnRydWUsImNvbG9yIjoiI0E2QjlFNCJ9LHsidHlwZSI6ImNvbHVtbiIsImZ1bmMiOiJTVU0iLCJ5QXhpcyI6InBhcnRpY3VsaWVyIiwic2NpZW50aWZpY0Rpc3BsYXkiOnRydWUsImNvbG9yIjoiI0ZDOEQ2MiJ9LHsidHlwZSI6ImNvbHVtbiIsImZ1bmMiOiJTVU0iLCJ5QXhpcyI6ImFjY2Vzc2libGVfYXVfcHVibGljIiwic2NpZW50aWZpY0Rpc3BsYXkiOnRydWUsImNvbG9yIjoiIzY2QzJBNSJ9XSwieEF4aXMiOiJ0cmltZXN0cmUiLCJtYXhwb2ludHMiOjUwLCJzb3J0IjoiIiwic3RhY2tlZCI6Im5vcm1hbCIsImNvbmZpZyI6eyJkYXRhc2V0Ijoibm9tYnJlLXRvdGFsLWRlLXBvaW50cy1kZS1jaGFyZ2UiLCJvcHRpb25zIjp7fX19XSwidGltZXNjYWxlIjoiIiwic2luZ2xlQXhpcyI6dHJ1ZSwiZGlzcGxheUxlZ2VuZCI6dHJ1ZSwiYWxpZ25Nb250aCI6dHJ1ZX0%3D&sort=-trimestre).
 
-Ces données seront à croiser avec A croiser avec celle de [ODRE](https://odre.opendatasoft.com/explore/dataset/bornes-irve/information/?disjunctive.region&disjunctive.departement&sort=n_amenageur&dataChart=eyJxdWVyaWVzIjpbeyJjaGFydHMiOlt7InR5cGUiOiJjb2x1bW4iLCJmdW5jIjoiQ09VTlQiLCJ5QXhpcyI6ImNvZGVfaW5zZWUiLCJzY2llbnRpZmljRGlzcGxheSI6dHJ1ZSwiY29sb3IiOiJyYW5nZS1jdXN0b20ifV0sInhBeGlzIjoiZGVwYXJ0ZW1lbnQiLCJtYXhwb2ludHMiOiIiLCJ0aW1lc2NhbGUiOiIiLCJzb3J0IjoiIiwiY29uZmlnIjp7ImRhdGFzZXQiOiJib3JuZXMtaXJ2ZSIsIm9wdGlvbnMiOnsiZGlzanVuY3RpdmUucmVnaW9uIjp0cnVlLCJkaXNqdW5jdGl2ZS5kZXBhcnRlbWVudCI6dHJ1ZX19LCJzZXJpZXNCcmVha2Rvd24iOiJwdWlzc19tYXgifV0sImRpc3BsYXlMZWdlbmQiOnRydWUsImFsaWduTW9udGgiOnRydWUsInRpbWVzY2FsZSI6IiJ9&location=5,46.79635,2.65923&basemap=jawg.light) et [Gireve](https://www.data.gouv.fr/fr/organizations/gireve-2/), travail qui n'a pas été fait par nalron. 
+Enedis précise que leurs données sont combinées avec les données de [Girève](https://www.data.gouv.fr/fr/organizations/gireve-2/) et AAA data (qui ne semblent pas être open).  Il est possible de checker cela en récupérant ces données. On pourra aussi croiser les données Enedis avec celles de [ODRE](https://odre.opendatasoft.com/explore/dataset/bornes-irve/information/?disjunctive.region&disjunctive.departement&sort=n_amenageur&dataChart=eyJxdWVyaWVzIjpbeyJjaGFydHMiOlt7InR5cGUiOiJjb2x1bW4iLCJmdW5jIjoiQ09VTlQiLCJ5QXhpcyI6ImNvZGVfaW5zZWUiLCJzY2llbnRpZmljRGlzcGxheSI6dHJ1ZSwiY29sb3IiOiJyYW5nZS1jdXN0b20ifV0sInhBeGlzIjoiZGVwYXJ0ZW1lbnQiLCJtYXhwb2ludHMiOiIiLCJ0aW1lc2NhbGUiOiIiLCJzb3J0IjoiIiwiY29uZmlnIjp7ImRhdGFzZXQiOiJib3JuZXMtaXJ2ZSIsIm9wdGlvbnMiOnsiZGlzanVuY3RpdmUucmVnaW9uIjp0cnVlLCJkaXNqdW5jdGl2ZS5kZXBhcnRlbWVudCI6dHJ1ZX19LCJzZXJpZXNCcmVha2Rvd24iOiJwdWlzc19tYXgifV0sImRpc3BsYXlMZWdlbmQiOnRydWUsImFsaWduTW9udGgiOnRydWUsInRpbWVzY2FsZSI6IiJ9&location=5,46.79635,2.65923&basemap=jawg.light) ou d'autres source comme [celle-ci](https://odre.opendatasoft.com/explore/dataset/bornes-irve/api/?disjunctive.region&disjunctive.departement)
 
 
 ### Parc des installations de production raccordées par departement : [data.enedis.fr](https://data.enedis.fr/explore/dataset/parc-des-installations-de-production-raccordees-par-departement/information/?disjunctive.type_injection)
@@ -97,7 +97,13 @@ Partage ma borne, Clem... sites de bornes à partager à scrapper.
 
 ## Notebook 1
 
-- Partie 1 : Evolution du nombre de nouvelles immatriculations par type de motorisation et groupes de puissance : Trop précis
-- Partie 2 : Pareil par type de motorisation : Intéressant
+- Partie 1 : Evolution du nombre de nouvelles immatriculations par type de motorisation et groupes de puissance : Trop précis dans la catégorisation des véhicules. La typologie par type de motorisation est suffisante.
+- Partie 2 : Pareil par type de motorisation : Intéressant, nous allons reproduire cette visualisation en utilisant folium puis l'exposer avec streamlit plutôt que passer par un serveur Tableau public.
 - Partie 3 : Scrapping d'informations sur les véhicules éléctriques : Peut être exploité dans un second temps mais pas essentiel à ce stade
-- Partie 4 : Prédictions, projections à 2 ans de l'évolution du nombre de véhicules électriques, diesel, essence... Pas beaucoup de points de données, pas super pertinent.
+- Partie 4 : Prédictions, projections à 2 ans de l'évolution du nombre de véhicules électriques, diesel, essence... Pas beaucoup de points de données, la prédiction ne va pas être très utile.
+
+
+## Notebook 2
+
+- Partie 1 : Données points de charge par typologie, bonne initiative. Aujourd'hui un dataset avec les typologies en colonne existe ce qui évite le passage par le pivot_table. Aussi, les boxplots sont inutiles ici, on n'a pas besoin de voir de moyenne ni de quantile par année, cela ne fait pas sens. A certains endroits le code peut être optimisé. Dans l'ensemble ceci est très utile pour notre projet.
+- Partie 2 : Données IRVE, partie clé pour nous. 
