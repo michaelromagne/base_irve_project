@@ -25,6 +25,17 @@ jupyter notebook
 ```
 Ensuite, sélectionnez le kernel créé dans l'interface web.
 
+
+# TODO
+
+- Check pourquoi certaines communes sont manquantes dans le join communes - immatriculations dans le notebook ```enrichissement_dataset_voitures_par_commune_et_type_de_charge.ipynb```. Comparer les données communes obtenues sur "https://geo.api.gouv.fr/communes/<code>" avec le csv ```raw_data/communes-departement-region.csv```. Il faut s'assurer qu'il n'y a pas trop de valeurs manquantes pour avoir des vizs fiables.
+- Continuer les vizs folium, intégrer les plus intéressantes dans une application streamlit.
+- Bien valider la qualité des données consolidées IRVE + continuer le nettoyage du notebook, certaines méthodes d'imputation sont moches.
+- Problème de join avec les communes à fixer
+- Visualiser la concentration des IRVE en France via des heatmaps, ou par département / commune en utilisant folium.
+- Croiser ces vizs avec les données de population et de trafic routier.
+
+
 # Détails sur les data sources utilisées par Nalron & comparaison les notres
 
 Nalron a utilisé de nombreuses data sources, certaines sont pertinentes pour notre sujet à court ou long terme, d'autres peuvent être écartées. Nous allons les détailler et faire des liens avec les datasources repérées pour le projet Data For Good.
@@ -49,8 +60,8 @@ Ces fiches auto sont intéressantes mais pas indispensables. Les colonnes ont ch
 
 
 Ce fichier est la base de notre étude. Il est exploité principalement dans le notebook 2 du projet de nalron. Cette data source est une consolidation à partir de plusieurs autres sources, fournissant des indications de géolocalisation, département, région, opérateur d'exploitation, type de prise, etc…
-Une nouvelle version de ce fichier consolidé a été publié en fin 2022 mais a des colonnes différentes de celui de 2020. On devrait pouvoir faire correspondre les deux versions rapidement https://www.data.gouv.fr/fr/datasets/fichier-consolide-des-bornes-de-recharge-pour-vehicules-electriques/
-
+Une nouvelle version de ce fichier consolidé a été publié en fin 2022: https://www.data.gouv.fr/fr/datasets/fichier-consolide-des-bornes-de-recharge-pour-vehicules-electriques/
+Cette nouvelle version est beaucoup plus fiable que la version de 2020. Il n'est pas nécessaire de faire le même travail d'imputation que nalron a fait, même si nous devons être prudents et checker ces données.
 
 ### Auchan, Leclerc, Tesla, Nissan...
 
@@ -100,10 +111,18 @@ Partage ma borne, Clem... sites de bornes à partager à scrapper.
 - Partie 1 : Evolution du nombre de nouvelles immatriculations par type de motorisation et groupes de puissance : Trop précis dans la catégorisation des véhicules. La typologie par type de motorisation est suffisante.
 - Partie 2 : Pareil par type de motorisation : Intéressant, nous allons reproduire cette visualisation en utilisant folium puis l'exposer avec streamlit plutôt que passer par un serveur Tableau public.
 - Partie 3 : Scrapping d'informations sur les véhicules éléctriques : Peut être exploité dans un second temps mais pas essentiel à ce stade
-- Partie 4 : Prédictions, projections à 2 ans de l'évolution du nombre de véhicules électriques, diesel, essence... Pas beaucoup de points de données, la prédiction ne va pas être très utile.
+- Partie 4 : Prédictions, projections à 2 ans de l'évolution du nombre de véhicules électriques, diesel, essence... Pas beaucoup de points de données, la prédiction est délicate.
 
 
 ## Notebook 2
 
 - Partie 1 : Données points de charge par typologie, bonne initiative. Aujourd'hui un dataset avec les typologies en colonne existe ce qui évite le passage par le pivot_table. Aussi, les boxplots sont inutiles ici, on n'a pas besoin de voir de moyenne ni de quantile par année, cela ne fait pas sens. A certains endroits le code peut être optimisé. Dans l'ensemble ceci est très utile pour notre projet.
-- Partie 2 : Données IRVE, partie clé pour nous. 
+- Partie 2 : Données IRVE, partie clé pour nous. Une bonne partie du notebook cherche à remplacer les valeurs NaN des enseignes / aménageurs. Est-ce vraiment utile ? De plus, les dernières consolidations de la datasource data.gouv sont beaucoup plus fiables que celles de 2020. De nombreuses données manquantes ont été ajoutées. Une catégorisation des aménageurs de points de charge est faite dans ce notebook.
+- La dernière partie sur les prédictions est, comme pour le notebook 1, pas très pertinente. Mais cela fait joli. On saura que si on reste sur la cadence actuelle, on aura un certain nombre d'IRVE... C'est pourquoi l'évaluation et la comparaison avec Holtwinter n'est pas nécessaire. On sait que notre modèle est limité.
+
+
+## Notebook 3
+
+- Analyse de la consommation d'électricité en France et des filières de production. Profiler un pic d’utilisation des bornes de recharge. Courbe de charge réseau électrique pour répondre aux nouveaux modes de consommation.
+
+Intéressant mais on ne traitera pas ce sujet dans l'immédiat.
